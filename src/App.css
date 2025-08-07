@@ -1,0 +1,363 @@
+.header {
+  margin-bottom: 30px;
+  color: white;
+}
+
+.header-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.user-info {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  font-size: 14px;
+}
+
+.user-info span {
+  color: #ffd700;
+  font-weight: 600;
+}
+
+.auth-actions {
+  display: flex;
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.auth-actions .auth-button {
+  flex: 1;
+}
+
+.header h1 {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.header-icon {
+  color: #ffd700;
+}
+
+.header p {
+  font-size: 1.1rem;
+  opacity: 0.9;
+}
+
+.portfolio-summary {
+  margin-bottom: 30px;
+}
+
+.portfolio-summary h2 {
+  margin-bottom: 20px;
+  color: #333;
+  font-size: 1.5rem;
+}
+
+.summary-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+}
+
+.summary-item {
+  text-align: center;
+  padding: 20px;
+  background: #f8f9fa;
+  border-radius: 8px;
+  border-left: 4px solid #667eea;
+}
+
+.summary-item h3 {
+  font-size: 0.9rem;
+  color: #666;
+  margin-bottom: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.summary-item .amount {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #333;
+}
+
+.controls {
+  display: flex;
+  gap: 15px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.controls .btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.investments-section h2 {
+  margin-bottom: 20px;
+  color: white;
+  font-size: 1.8rem;
+}
+
+.empty-state {
+  text-align: center;
+  padding: 40px;
+  color: #666;
+}
+
+.empty-state p {
+  font-size: 1.1rem;
+}
+
+.investment-card {
+  position: relative;
+}
+
+.investment-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  padding-bottom: 15px;
+  border-bottom: 2px solid #f0f0f0;
+}
+
+.investment-header h3 {
+  font-size: 1.3rem;
+  color: #333;
+  margin: 0;
+}
+
+.investment-actions {
+  display: flex;
+  gap: 10px;
+}
+
+.investment-actions .btn {
+  padding: 8px 16px;
+  font-size: 12px;
+}
+
+.investment-details {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.detail-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 0;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.detail-row:last-child {
+  border-bottom: none;
+}
+
+.detail-row span:first-child {
+  font-weight: 600;
+  color: #555;
+}
+
+.detail-row span:last-child {
+  font-weight: 500;
+}
+
+.symbol {
+  background: #667eea;
+  color: white;
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+.edit-form {
+  margin-top: 20px;
+  padding-top: 20px;
+  border-top: 2px solid #f0f0f0;
+}
+
+.form-actions {
+  display: flex;
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.form-actions .btn {
+  flex: 1;
+}
+
+.symbol-help {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 10px;
+  margin: 15px 0;
+}
+
+.symbol-item {
+  padding: 8px 12px;
+  background: #f8f9fa;
+  border-radius: 6px;
+  border-left: 3px solid #667eea;
+  font-size: 14px;
+}
+
+.symbol-item strong {
+  color: #333;
+}
+
+.symbol-help a {
+  color: #667eea;
+  text-decoration: none;
+}
+
+.symbol-help a:hover {
+  text-decoration: underline;
+}
+
+.search-container {
+  position: relative;
+}
+
+.search-loading {
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #666;
+  font-size: 12px;
+  font-style: italic;
+}
+
+.search-dropdown {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  background: white;
+  border: 2px solid #e9ecef;
+  border-top: none;
+  border-radius: 0 0 8px 8px;
+  max-height: 300px;
+  overflow-y: auto;
+  z-index: 1000;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.search-result-item {
+  padding: 12px 16px;
+  cursor: pointer;
+  border-bottom: 1px solid #f0f0f0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: background-color 0.2s ease;
+}
+
+.search-result-item:hover {
+  background-color: #f8f9fa;
+}
+
+.search-result-item:last-child {
+  border-bottom: none;
+}
+
+.crypto-info {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.crypto-name {
+  font-weight: 600;
+  color: #333;
+  font-size: 14px;
+}
+
+.crypto-symbol {
+  color: #666;
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.market-rank {
+  background: #667eea;
+  color: white;
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-size: 10px;
+  font-weight: 600;
+}
+
+.search-container input:focus + .search-dropdown {
+  border-color: #667eea;
+}
+
+@media (max-width: 768px) {
+  .header-content {
+    flex-direction: column;
+    gap: 20px;
+    text-align: center;
+  }
+  
+  .header h1 {
+    font-size: 2rem;
+    flex-direction: column;
+    gap: 5px;
+  }
+  
+  .user-info {
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  .summary-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .controls {
+    flex-direction: column;
+  }
+  
+  .controls .btn {
+    width: 100%;
+    justify-content: center;
+  }
+  
+  .investment-header {
+    flex-direction: column;
+    gap: 15px;
+    align-items: flex-start;
+  }
+  
+  .investment-actions {
+    width: 100%;
+    justify-content: space-between;
+  }
+  
+  .form-actions {
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 480px) {
+  .summary-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .detail-row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 5px;
+  }
+} 
