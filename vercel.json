@@ -27,6 +27,10 @@
       "dest": "/api/health.js"
     },
     {
+      "src": "/api/test",
+      "dest": "/api/test.js"
+    },
+    {
       "src": "/(.*)",
       "dest": "/index.html"
     }
