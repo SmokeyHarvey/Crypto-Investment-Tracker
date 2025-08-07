@@ -61,13 +61,13 @@ app.post('/investments', (req, res) => {
   });
 });
 
-// Catch-all for other API routes
-app.all('*', (req, res) => {
+// Default route
+app.get('/', (req, res) => {
   res.json({
-    message: 'API endpoint working',
-    method: req.method,
-    path: req.path
+    message: 'API is running',
+    timestamp: new Date().toISOString()
   });
 });
 
+// Export for Vercel
 module.exports = app; 
