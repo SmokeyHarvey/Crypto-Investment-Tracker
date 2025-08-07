@@ -30,9 +30,7 @@ app.use(express.urlencoded({ extended: true, limit: '10mb' }));
 
 // CORS middleware
 app.use(cors({
-  origin: process.env.NODE_ENV === 'production' 
-    ? ['https://crypto-investment-tracker-mu.vercel.app', 'https://crypto-investment-tracker-mu.vercel.app'] 
-    : process.env.FRONTEND_URL || 'http://localhost:3000',
+  origin: process.env.FRONTEND_URL || 'http://localhost:3000',
   credentials: true
 }));
 
@@ -102,7 +100,4 @@ process.on('SIGINT', () => {
     console.log('MongoDB connection closed');
     process.exit(0);
   });
-});
-
-// Export for Vercel serverless
-module.exports = app; 
+}); 

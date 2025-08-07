@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { authAPI } from '../../services/api';
-import { Eye, EyeOff, Mail, Lock } from 'lucide-react';
+import { Eye, EyeOff, Mail, Lock, User } from 'lucide-react';
 import './Auth.css';
 
 const Login = ({ onLogin }) => {
