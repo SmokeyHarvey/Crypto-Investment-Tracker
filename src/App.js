@@ -4,6 +4,7 @@ import { Plus, TrendingUp, TrendingDown, Coins, LogOut, User, Settings } from 'l
 import './App.css';
 import Login from './components/Auth/Login';
 import Register from './components/Auth/Register';
+import { investmentsAPI } from './services/api';
 
 function App() {
   const [user, setUser] = useState(null);
@@ -38,11 +39,7 @@ function App() {
   // Load investments from API
   const fetchInvestments = async () => {
     try {
-      const response = await axios.get('http://localhost:5001/api/investments', {
-        headers: {
-          'Authorization': `Bearer ${localStorage.getItem('token')}`
-        }
-      });
+      const response = await investmentsAPI.getAll();
       setInvestments(response.data);
     } catch (error) {
       console.error('Error fetching investments:', error);
@@ -140,11 +137,7 @@ function App() {
   // Add new investment
   const addInvestment = async (newInvestment) => {
     try {
-      const response = await axios.post('http://localhost:5001/api/investments', newInvestment, {
-        headers: {
-          'Authorization': `Bearer ${localStorage.getItem('token')}`
-        }
-      });
+      const response = await investmentsAPI.add(newInvestment);
       setInvestments([...investments, response.data]);
       setShowAddForm(false);
     } catch (error) {
@@ -156,11 +149,7 @@ function App() {
   // Remove investment
   const removeInvestment = async (id) => {
     try {
-      await axios.delete(`http://localhost:5001/api/investments/${id}`, {
-        headers: {
-          'Authorization': `Bearer ${localStorage.getItem('token')}`
-        }
-      });
+      await investmentsAPI.delete(id);
       setInvestments(investments.filter(inv => inv._id !== id));
     } catch (error) {
       console.error('Error removing investment:', error);
@@ -171,11 +160,7 @@ function App() {
   // Update investment
   const updateInvestment = async (id, updatedData) => {
     try {
-      const response = await axios.put(`http://localhost:5001/api/investments/${id}`, updatedData, {
-        headers: {
-          'Authorization': `Bearer ${localStorage.getItem('token')}`
-        }
-      });
+      const response = await investmentsAPI.update(id, updatedData);
       setInvestments(investments.map(inv => 
         inv._id === id ? response.data : inv
       ));
